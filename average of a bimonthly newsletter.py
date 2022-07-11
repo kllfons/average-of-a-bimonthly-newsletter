@@ -1,16 +1,16 @@
-a= int(input('primeiro bimestre:'))
-while a>10:
-    a= int(input('você digitou errado. primeiro bimestre:'))
-b= int(input('segundo bimestre:'))
-while b>10:
-    b= int(input('você digitou errado. segundo bimestre:'))
-c= int(input('terceiro bimestre:'))
-while c>10:
-    c= int(input('você digitou errado. terceiro bimestre:'))
-d= int(input('quarto bimestre:'))
-while d>10:
-    d= int(input('você digitou errado. quarto bimestre:'))
-média=(a+b+c+d)/4
-print('média: {}'.format(média))
+notas = [0, 0, 0, 0]
+nbimestre = ["Primeiro", "Segundo", "Terceiro", "Quarto"]
+media = 0
 
-
+for i in range(4):
+    notas[i] = int(input('{} bimestre: '.format(nbimestre[i])))
+    while notas[i]>10 or notas[i]<0:
+        notas[i]= int(input('Numero invalido... {} bimestre: '.format(nbimestre[i])))
+    media += notas[i]
+    
+media /= 4
+print('média: {}'.format(media))
+if(media<7):
+    print('Aluno Reprovado')
+else:
+    print('Aluno Aprovado')
